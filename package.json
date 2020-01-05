@@ -10,6 +10,7 @@
     "config": "^3.2.4",
     "cron": "^1.7.2",
     "driftwood": "^1.5.5",
+    "fs-extra": "^8.1.0",
     "js-yaml": "^3.13.1",
     "p-limit": "^2.2.2",
     "p-timeout": "^3.2.0",
@@ -36,6 +37,8 @@
   "scripts": {
     "format": "prettier-standard '**/*.js'",
     "deploy": "pm2 deploy production",
-    "start": "node ."
+    "start": "node .",
+    "logs": "pm2 deploy production exec \"pm2 logs banking\"",
+    "restart": "pm2 deploy production exec \"pm2 restart banking\""
   }
 }
