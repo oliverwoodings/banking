@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+
+const { syncLisaBalance } = require('../operations')
+const sentry = require('../app/lib/sentry')
+
+syncLisaBalance('danni')
+  .then(() => syncLisaBalance('oli'))
+  .catch(e => {
+    console.error(e)
+    process.exit(1)
+  })

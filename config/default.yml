@@ -1,0 +1,34 @@
+name:
+  skipton:
+    username: foo
+    password: bar
+    answers:
+      foo: bar
+  moneyDashboard:
+    lisaAccountId: boz
+
+moneyDashboard:
+  username: foo
+  password: bar
+
+puppeteer:
+  options:
+    headless: true
+  closeOnError: true
+  timeout: 30000
+
+sentry:
+  enabled: false
+  dsn: foo
+
+schedules:
+  - spec: 0 0 * * *
+    operation: syncLisaBalance
+    args:
+      - oli
+  - spec: 0 0 * * *
+    operation: syncLisaBalance
+    args:
+      - danni
+
+runOnStart: false

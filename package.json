@@ -3,19 +3,38 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Oliver Woodings",
   "license": "MIT",
   "dependencies": {
-    "axios": "^0.19.0",
-    "axios-cookiejar-support": "^0.5.1",
-    "axios-curlirize": "^1.3.4",
-    "cheerio": "^1.0.0-rc.3",
+    "@sentry/node": "^5.10.2",
     "config": "^3.2.4",
-    "fs-extra": "^8.1.0",
+    "cron": "^1.7.2",
+    "driftwood": "^1.5.5",
     "js-yaml": "^3.13.1",
-    "tough-cookie": "^3.0.1"
+    "p-limit": "^2.2.2",
+    "p-timeout": "^3.2.0",
+    "puppeteer": "^2.0.0"
+  },
+  "devDependencies": {
+    "husky": "^1.3.1",
+    "lint-staged": "^9.5.0",
+    "pm2": "^3.5.2",
+    "prettier-standard": "^16.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "post-commit": "git update-index --again"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "prettier-standard",
+      "git add"
+    ]
+  },
+  "scripts": {
+    "format": "prettier-standard '**/*.js'",
+    "deploy": "pm2 deploy production"
   }
 }
