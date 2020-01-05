@@ -25,6 +25,7 @@ async function getLisaBalance (page, userConfig) {
 
   log.info('Scraping balance...')
   await page.waitFor('.current-bal')
+  await page.waitFor(500)
   const balance = await getText(page, '.current-bal')
   return parseBalance(balance)
 }
