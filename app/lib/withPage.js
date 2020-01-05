@@ -19,7 +19,7 @@ module.exports = function withPage (fn) {
       try {
         await fs.mkdirp(SCREENSHOT_DIR)
         await page.screenshot({
-          path: path.resolve(SCREENSHOT_DIR, Date.now() + '.png'),
+          path: path.resolve(SCREENSHOT_DIR, new Date().toJSON() + '.png'),
           fullPage: true
         })
       } catch (e) {
