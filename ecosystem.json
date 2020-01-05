@@ -1,7 +1,7 @@
 {
   "apps": [
     {
-      "name": "wedding",
+      "name": "banking",
       "script": "node ./app",
       "env_production": {
         "NODE_ENV": "production"
@@ -15,7 +15,7 @@
       "ref": "origin/master",
       "repo": "git@github.com:oliverwoodings/banking.git",
       "path": "/root/apps/banking",
-      "post-deploy": "nvm use && npm i && npx pm2 startOrRestart ecosystem.json --env production"
+      "post-deploy": "nvm use && npm i --production && npx pm2 startOrRestart ecosystem.json --env production"
     }
   }
 }
