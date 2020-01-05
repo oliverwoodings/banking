@@ -1,0 +1,6 @@
+name:
+  skipton:
+    username: foo
+    password: bar
+    answers:
+      foo: bar
