@@ -11,9 +11,8 @@ async function updateLisaBalance (page, userConfig, balance) {
 
   log.info('Logging in...')
   await page.goto('https://my.moneydashboard.com/?signin=true')
-  log.debug('Waiting for cookie dialog')
-  await page.waitFor('.cookie-control-dialog')
-  log.debug('Clicking dialog')
+  await page.waitFor('.cookie-control-dialog button', { visible: true })
+  await page.waitFor(300)
   await page.click('.cookie-control-dialog button')
   await page.waitFor(300)
   await page.type('input[name="email"]', config.moneyDashboard.username)
