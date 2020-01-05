@@ -2,7 +2,7 @@
   "name": "banking",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app/index.js",
   "author": "Oliver Woodings",
   "license": "MIT",
   "dependencies": {
@@ -35,6 +35,7 @@
   },
   "scripts": {
     "format": "prettier-standard '**/*.js'",
-    "deploy": "pm2 deploy production"
+    "deploy": "pm2 deploy production",
+    "start": "node ."
   }
 }
