@@ -24,12 +24,12 @@ async function getLisaBalance (page, userConfig) {
   await page.waitForNavigation()
 
   log.info('Scraping balance...')
-  await page.waitFor('.current-bal', { visible: true })
   const balance = await getText(page, '.current-bal')
   return parseBalance(balance)
 }
 
 async function getText (page, sel) {
+  await page.waitFor(sel, { visible: true })
   const element = await page.$(sel)
   if (!element) {
     throw new Error(`Cannot find element for selector '${sel}'`)

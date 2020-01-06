@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 
-const { syncLisaBalance } = require('../operations')
+const { syncLisaBalance } = require('../app/operations')
 const sentry = require('../app/lib/sentry')
 
-syncLisaBalance('danni')
-  .then(() => syncLisaBalance('oli'))
+syncLisaBalance('oli')
+  .then(() => syncLisaBalance('danni'))
   .catch(e => {
     console.error(e)
     process.exit(1)
