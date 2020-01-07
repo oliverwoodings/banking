@@ -13,6 +13,6 @@ async function syncLisaBalance (name) {
   log.info(`Syncing LISA balance for ${name} from Skipton to Money Dashboard`)
   const balance = await getLisaBalance(config[name])
   log.info('Got balance from Skipton:', balance)
-  await updateLisaBalance(config.danni, balance)
+  await updateLisaBalance(config[name], balance)
   log.info('Done!')
 }
